@@ -96,9 +96,9 @@
           @foreach($getNovedades as $novedad)
           <div class="col-md-4">
             <div class="work-box">
-              <a href="{{ asset('storage/uploads/image/novedades/'.$novedad->imagen) }}" data-gall="portfolioGallery" class="venobox">
+              <a href="{{ asset('storage/uploads/image/novedades/'.$novedad->image) }}" data-gall="portfolioGallery" class="venobox">
                 <div class="work-img">
-                  <img src="{{ asset('storage/uploads/image/novedades/'.$novedad->imagen) }}" alt="" class="img-fluid">
+                  <img src="{{ asset('storage/uploads/image/novedades/'.$novedad->image) }}" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">

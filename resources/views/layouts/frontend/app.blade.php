@@ -53,6 +53,22 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contacto</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="cursos">Cursos</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll" href="institucional">Institucional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="mision">Mision</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="novedades">Novedades</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll" href="objetivos">Objetivos</a>
+          </li>
         </ul>
       </div>
     </div>

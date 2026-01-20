@@ -69,16 +69,7 @@
             </div>
 
             <div class="mb-3">
-            <div class="col-xs-6 col-sm-6 col-md-6"> 
-                <label for="Administrador">Organización Política</label>
-                <select required class="form-control" id="organizacion_id" name="organizacion_id" >
-                
-                    @foreach($organizaciones as $model)
-                    <option value="{{ $model->id }}" <?php if( $user->organizacion_id == $model->id) echo "selected"; else echo "mm"; ?> >{{ $model->organizacion }}</option>
-                                  
-                    @endforeach
-                </select>
-            </div>
+           
             </div>
 
 

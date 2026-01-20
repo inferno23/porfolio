@@ -50,11 +50,29 @@
     </li>
     @endif
     
-    <li class="nav-item {{ Request::is('user') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('user.index') }}">
-        <i class="fa fa-user"></i>
-            <span>Usuarios</span></a>
+
+
+    <li class="nav-item {{ Request::is('header') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('header.index') }}">
+        <i class="fa fa-window-maximize"></i>
+            <span>Imagen principal</span></a>
     </li>
+
+ <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('about.index') }}">
+        <i class="fa fa-bars"></i>
+            <span>Cuerpo de la página</span></a>
+    </li>
+    
+    <li class="nav-item {{ Request::is('footer') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('footer.index') }}">
+        <i class="fa fa-arrow-circle-down"></i>
+            <span>Pie de página</span></a>
+    </li>
+
+
+
+    
     
     <li class="nav-item {{ Request::is('curso') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('curso.index') }}">
@@ -77,7 +95,11 @@
             <i class="fa fa-sitemap"></i>
             <span>Obras</span></a>
     </li>
-
+<li class="nav-item {{ Request::is('user') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('user.index') }}">
+        <i class="fa fa-user"></i>
+            <span>Usuarios</span></a>
+    </li>
     
     @endif
     

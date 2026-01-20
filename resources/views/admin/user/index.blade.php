@@ -86,7 +86,7 @@
                 <thead>
                     <tr>
                         <th>Nombre y Apellido</th>
-                        <th>Organización</th>
+                      
                         <th>Rol</th>
                         <th>Email</th>
                         <th>Celular</th>
@@ -98,21 +98,7 @@
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>
-                        <?php    
-                        
-                        if (!empty($user->organizacion_id)) {
-                           if (array_key_exists($user->organizacion_id, $organizaciones)) {
-                            echo $organizaciones [$user->organizacion_id];
-                            }else
-                            echo "Sin Asignar "   ;
-
-                        
-                        }else {
-                                echo "Sin Asignar"   ;
-                            }
-                             
-                            ?>
-                        </td>
+                       
                         <td>{{ $user->role }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->celular }}</td>    

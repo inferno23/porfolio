@@ -17,7 +17,7 @@
 
         <ul class="navbar-nav ml-auto">
             
-            <img src="{{ asset('templates/frontend/devfolio') }}/assets/img/footer.png" style="height: 35px; position: absolute; bottom: 10px;  object-position: center;" class="img-fluid rounded b-shadow-a" alt="">
+            <!-- img src="{{ asset('templates/frontend/devfolio') }}/assets/img/footer.png" style="height: 35px; position: absolute; bottom: 10px;  object-position: center;" class="img-fluid rounded b-shadow-a" alt=""-->
                
             
         @if(\Auth::user()->role== 1)

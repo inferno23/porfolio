@@ -28,11 +28,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-       // $organizaciones = Organizacion::get();
-
-        $organizaciones = Organizacion::where('organizacion','!=',null)->pluck('organizacion','id')->toArray();
-    //debug($organizaciones);
-        return view('admin.user.index', compact('users','organizaciones'));
+        return view('admin.user.index', compact('users'));
     }
 
     public function create()
@@ -45,12 +41,12 @@ class UserController extends Controller
     public function store(Request $request)
     {   
        /// agregar el modelo user el pais_id
-        $organizacion_id = $request->organizacion_id;
+       /// $organizacion_id = $request->organizacion_id;
        
-         $organizacion  = Organizacion::find($organizacion_id);
-         $request->request->add(['pais_id' => $organizacion->pais_id  ]);
-         $request->request->add(['provincia_id' => $organizacion->provincia_id  ]);
-         $request->request->add(['localidad_id' => $organizacion->localidad_id  ]);
+        /// $organizacion  = Organizacion::find($organizacion_id);
+        // $request->request->add(['pais_id' => $organizacion->pais_id  ]);
+        // $request->request->add(['provincia_id' => $organizacion->provincia_id  ]);
+         //$request->request->add(['localidad_id' => $organizacion->localidad_id  ]);
 
         $request->request->add(['password' => Hash::make($request->password)]);
         User::create($request->all());
@@ -60,8 +56,8 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        $organizaciones = Organizacion::get();
-        return view('admin.user.edit', compact('user','organizaciones'));
+       
+        return view('admin.user.edit', compact('user'));
     }
 
     public function update(User $user)

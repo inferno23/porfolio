@@ -96,9 +96,9 @@
           @foreach($getCursos as $curso)
           <div class="col-md-4">
             <div class="work-box">
-              <a href="{{ asset('storage/uploads/image/cursos/'.$curso->imagen) }}" data-gall="portfolioGallery" class="venobox">
+              <a href="{{ asset('storage/uploads/image/cursos/'.$curso->image) }}" data-gall="portfolioGallery" class="venobox">
                 <div class="work-img">
-                  <img src="{{ asset('storage/uploads/image/cursos/'.$curso->imagen) }}" alt="" class="img-fluid">
+                  <img src="{{ asset('storage/uploads/image/cursos/'.$curso->image) }}" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">

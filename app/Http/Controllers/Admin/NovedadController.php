@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\novedadRequest;
+use App\Http\Requests\NovedadRequest;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\File;
 
-use App\Models\novedad;
+use App\Models\Novedad;
 use PhpParser\Node\Stmt\Echo_;
 
 class NovedadController extends Controller
