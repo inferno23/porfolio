@@ -33,9 +33,8 @@ class UserController extends Controller
 
     public function create()
     {
-        $organizaciones = Organizacion::get();
-        
-        return view('admin.user.create', compact('organizaciones'));
+      
+        return view('admin.user.create');
     }
 
     public function store(Request $request)
@@ -62,17 +61,7 @@ class UserController extends Controller
 
     public function update(User $user)
     {
-        // agregar el modelo user el pais_id
-      /**  
-       $organizacion_id = $request->organizacion_id;
-       
-         $organizacion  = Organizacion::find($organizacion_id);
-          $user->pais_id= $organizacion->pais_id ;
-         
-          $user->provincia_id= $organizacion->provincia_id ;
-          $user->localidad_id= $organizacion->localidad_id ;
-        */
-        
+                
         $user->update(array_merge(request()->all(),['password' => Hash::make(request()->password)]));
         return redirect()->route('user.index')->with('success','Registro Actualizado');
     }

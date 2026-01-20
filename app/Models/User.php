@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'localidad_id','provincia_id','pais_id','name', 'email', 'password','is_active',   'organizacion_id',  'tiempo_suscripcion', 'role','cargo','detalle','precandidato','imagen','celular','telefono',
+        'name', 'email', 'password','is_active', 'role','cargo','detalle','imagen','celular','telefono',
     ];
 
     /**
@@ -41,32 +41,7 @@ class User extends Authenticatable
 
 
 
-    public function persona()
-    {
-       // return $this->hasMany(Persona::class, 'id');
-        return $this->hasMany(Persona::class );
-    }
-
-    public function grupo()
-    {
-       // return $this->hasMany(Persona::class, 'id');
-        return $this->hasMany(Grupo::class );
-    }
-
-    public function organizacion()
-    {
-      
-       
-        return $this->belongsTo(Organizacion::class, 'organizacion_id');
-    }
-
-
-    public function telegrama()
-    {
-      
-        return $this->hasMany(Telegrama::class );
-    }
-
+   
 
     /**
      * Send the password reset notification.
