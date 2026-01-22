@@ -73,7 +73,11 @@
 
 
     
-    
+    <li class="nav-item {{ Request::is('page') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('page.index') }}">
+            <i class="fa fa-book"></i>
+            <span>Paginas</span></a>
+    </li>
     <li class="nav-item {{ Request::is('curso') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('curso.index') }}">
             <i class="fa fa-university"></i>

@@ -96,26 +96,8 @@ Route::middleware(['auth'])->namespace('Admin')->group(function(){
 	Route::post('admin/layout/setfooter',[LayoutController::class,'setFooter'])->name('layout.setfooter');
 
 
-   //Route::get('localidad/getLocalidadxprovincia/{id}','LocalidadController@getLocalidadxprovincia')->name('getLocalidadxprovincia');
-    Route::get('admin/localidad/getLocalidadxprovincia/{id}',[LocalidadController::class,'getLocalidadxprovincia'])->name('admin.localidad.getLocalidadxprovincia');
-	Route::get('admin/provincia/getProvinciaxpais/{id}',[ProvinciaController::class,'getProvinciaxpais'])->name('admin.provincia.getProvinciaxpais');
-	
 	Route::get('admin/user/export',[UserController::class,'export'])->name('user.export');
-	Route::get('admin/telegrama/export',[TelegramaController::class,'export'])->name('telegrama.export');
-
-	Route::post('admin/telegrama/storeLocalidad',[TelegramaController::class,'storeLocalidad'])->name('telegrama.storeLocalidad');
-
-	Route::post('admin/telegrama/storeProvincia',[TelegramaController::class,'storeProvincia'])->name('telegrama.storeProvincia');
-	Route::post('admin/telegrama/storeSenador',[TelegramaController::class,'storeSenador'])->name('telegrama.storeSenador');
-	Route::post('admin/telegrama/storePresidente',[TelegramaController::class,'storePresidente'])->name('telegrama.storePresidente');
-	Route::post('admin/telegrama/storeConsejal',[TelegramaController::class,'storeConsejal'])->name('telegrama.storeConsejal');
-
-	Route::post('admin/telegrama/storeDiputadoProv',[TelegramaController::class,'storeDiputadoProv'])->name('telegrama.storeDiputadoProv');
-
-	Route::post('admin/telegrama/storeMunicipal',[TelegramaController::class,'storeMunicipal'])->name('telegrama.storeMunicipal');
-
 	
-
 	Route::get('admin/registro/export',[RegistroController::class,'export'])->name('registro.export');
 
 
@@ -157,16 +139,10 @@ Route::middleware(['auth'])->namespace('Admin')->group(function(){
 	Route::resource('/admin/portfolio','PortfolioController');
 	Route::resource('/admin/skill','SkillController');
 	Route::resource('/admin/curso','CursoController');
-	Route::resource('/admin/persona','PersonaController');
-	Route::resource('/admin/provincia','ProvinciaController');
-	Route::resource('/admin/pais','PaisController');
-	Route::resource('/admin/localidad','LocalidadController');
-	Route::resource('/admin/organizacion','OrganizacionController');
-	Route::resource('/admin/registro','RegistroController');
-
+	Route::resource('/admin/page','PageController');
+	
 	Route::resource('/admin/obra','ObraController');
 	Route::resource('/admin/novedad','NovedadController');
-	//Route::resource('/admin/candidato','CandidatoController');
 	
 
 
