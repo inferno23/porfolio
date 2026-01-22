@@ -25,7 +25,7 @@ class PageRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'description' => 'required',
+           // 'description' => 'required',
             'file' => 'nullable|mimes:jpg,jpeg,png,svg,gif',
         ];
     }

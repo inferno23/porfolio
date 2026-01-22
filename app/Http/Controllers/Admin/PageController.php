@@ -25,11 +25,16 @@ class PageController extends Controller
 
     public function store(PageRequest $request)
     {   
+
+        ///dd($request->all());
       if($request->hasFile('file'))  {  
             $image = UploadController::uploadSingleImage('image/page');
                 
                 $request->request->add(['image' => $image]);
         }
+         
+
+        
 
         Page::create($request->all());
         return redirect()->route('page.index')->with('success','Registro creado correctamente');
@@ -52,4 +57,11 @@ class PageController extends Controller
         $page->delete();
         return redirect()->route('page.index')->with('success','Datos eliminados correctamente');
     }
+
+
+            public function show(Page $page)
+            {
+               
+                return view('admin.page.show', compact('page'));
+            }
 }

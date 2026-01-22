@@ -5,6 +5,9 @@
 @section('content')
 @include('layouts.components.datatables')
 @include('layouts.components.alert-dismissible')
+
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 <div class="card shadow mb-4">
     <div class="card-footer py-3">
         <a href="{{ route('page.create') }}" class="btn btn-success btn-sm">Agregar Registro +</a>
@@ -27,9 +30,21 @@
                             <img src="{{ asset('storage/uploads/image/page/'.$page->image) }}" width="50" height="50">
                         </td>
                         <td>{{ $page->title }}</td>
-                        <td>{{ $page->description }}</td>
+                        <td>
+                            <div class="quill-view-content">
+                                <!-- This is the key part: unescaped output -->
+                              
+
+                                {{ Str::limit(strip_tags($page->description), 60) }}
+                            </div>
+                            
+                            
+                          </td>
                         <td>
                             <div class="row mx-auto">
+
+                                <a href="{{ route('page.show',$page->id) }}" class="btn btn-secondary btn-sm"><i class="fa fa-eye"></i></a>
+
                                 <a href="{{ route('page.edit',$page->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit fa-fw"></i></a>
                                 <form method="POST" action="{{ route('page.destroy',$page->id) }}">
                                     @csrf
