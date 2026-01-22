@@ -47,6 +47,11 @@ class PageController extends Controller
 
     public function update(Request $request, Page $page)
     {
+        if($request->hasFile('file'))  {  
+            $image = UploadController::uploadSingleImage('image/page');
+                
+                $request->request->add(['image' => $image]);
+        }
         $page->update($request->all());
         return redirect()->route('page.index')->with('success','Datos modificados correctamente');
     }

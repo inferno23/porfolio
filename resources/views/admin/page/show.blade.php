@@ -1,6 +1,6 @@
 @extends('layouts.backend.app',[
-    'title' => 'Manage page',
-    'pageTitle' => 'Manage page',
+    'title' => 'Ver paginas de Inicio',
+    'pageTitle' => 'ver paginas de Inicio',
 ])
 @section('content')
 @include('layouts.components.datatables')
