@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 //Home Namespace
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Home\ContactoController;
+
 
 //Auth Namespace
 use App\Http\Controllers\Auth\LoginController;
@@ -16,13 +18,6 @@ use App\Http\Controllers\Admin\LayoutController;
 
 use App\Http\Controllers\Admin\InstituteController;
 
-use App\Http\Controllers\Admin\PersonaController;
-
-use App\Http\Controllers\Admin\LocalidadController;
-use App\Http\Controllers\Admin\ProvinciaController;
-use App\Http\Controllers\Admin\TelegramaController;
-
-use App\Http\Controllers\Admin\OrganizacionController;
 
 
 use App\Http\Controllers\Admin\RegistroController;
@@ -65,6 +60,9 @@ Route::namespace('Home')->group(function(){
 	Route::get('/institucional',[HomeController::class,'institucional'])->name('institucional');
 	Route::get('/objetivos',[HomeController::class,'objetivos'])->name('objetivos');
 	Route::get('/mision',[HomeController::class,'mision'])->name('mision');
+
+	Route::get('/contacto', [ContactoController::class, 'show'])->name('contact.show');
+Route::post('/contacto', [ContactoController::class, 'submit'])->name('contact.submit');
 
 });
 

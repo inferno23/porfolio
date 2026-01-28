@@ -53,9 +53,7 @@
           <li class="nav-item">
             <a class="nav-link js-scroll active" href="{{ route('home') }}">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">Acerca</a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contacto</a>
           </li>
@@ -240,15 +238,17 @@
 
 
                 <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
-                  <a href="/fotos" class="btn btn-outline-primary btn-lg px-5 py-3">Ver Fotos</a>
+                  <a href="/fotos" class="btn btn-outline-primary btn-lg px-5 py-3">Ver Fotos de la Sala</a>
               </div>
               
               </div>
             </div>
-          </div>
+            <div class="bg-orange w-100 rounded text-center" style="padding-top: 3rem; padding-bottom: 3rem; margin-top: 1rem;">
+            </div>
         </div>
+        
       </div>
-      <div class="bg-orange w-100 py-4 mt-3 rounded text-center">
+     
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
