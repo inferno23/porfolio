@@ -27,11 +27,35 @@
   
   ======================================================== -->
 </head>
+<style>
+:root {
+  /* Colores de eventos */
+  --fc-event-bg-color: #FFCC99; /* Naranja principal */
+  --fc-event-border-color: #CC5200; /* Naranja oscuro para bordes */
+  --fc-event-text-color: #fff; /* Texto blanco */
+  
+  /* Botones y cabecera */
+  --fc-button-bg-color: #f8bd96; /* Naranja claro */
+  --fc-button-border-color: #FF6600;
+  --fc-button-hover-bg-color: #CC5200;
+  --fc-button-hover-border-color: #993D00;
+  --fc-button-active-bg-color: #f7924f;
+  
+  /* Bordes de la tabla */
+  --fc-border-color: #FFCC99; 
+}
 
+/* Opcional: Cambiar color de fondo de los eventos en el calendario */
+.fc-event {
+    background-color: var(--fc-event-bg-color);
+    border-color: var(--fc-event-border-color);
+}
+
+
+
+</style>
 <body id="page-top">
 
-  
-  
   <!-- ======= Header/ Navbar ======= -->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav" style="background: #f9e7db;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
     
@@ -81,187 +105,72 @@
   </nav>
 
   <!-- ======= Intro Section ======= -->
-  <p>hhholla</p>  <p>hhholla</p>
-  <!-- End Intro Section -->
-  <section class="heronuevo" style="background-position: center right;background-image: url({{ asset('storage/uploads/image/header/'.$getHeader->image ?? 'gambar' ) }}">
-    <div class="heroanun" style="transform: translateY(10vh);">
-        <h1>{{ $getHeader->up_text ?? 'Nicasio' }}</h1>
-        <h2>{{ $getHeader->down_text ?? 'Multiespacio' }}
-        </h2>
-        
+  <div id="home" class="intro route bg-image" style="background-image: url({{ asset('storage/uploads/image/header/'.$getHeader->image ?? 'gambar' ) }}">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4">{{ $getHeader->up_text ?? 'Nicasio' }}</h1>
+          </div>
+      </div>
     </div>
-</section>
+  </div><!-- End Intro Section -->
+
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    @if($getSkill->count()>10000)  
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="{{ asset('storage/uploads/image/about/'.$getAbout->image ?? 'gambar' ) }}" style="height: 200px; object-fit: cover; object-position: center;" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Nombre: </span> <span>{{ $getAbout->name ?? 'Rahmat Hidayatullah' }}</span></p>
-                        <p><span class="title-s">Profile: </span> <span>{{ $getAbout->role ?? 'Student' }}</span></p>
-                        <p><span class="title-s">Email: </span> <span>{{ $getAbout->email ?? 'ratuaddil432@gmail.com' }}</span></p>
-                        <p><span class="title-s">Telefono: </span> <span>{{ $getAbout->phone ?? '0859987263' }}</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  @if($getSkill->count()>0)  
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <ul class="list-group col-md-8">
-                      @foreach($getSkill as $skill)
-                      <li class="list-group-item">{{ $skill->name }}</li>
-                      @endforeach
-                    </ul>
-                  </div>
-                  @endif
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        {{ $getAbout->title ?? 'Multiespacio' }}
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      {{ $getAbout->description ?? ' ok' }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
-    @endif
+   
+
     <!-- ======= Portfolio Section ======= -->
-    @if($getPortfolio->count()>100000000000)
+    @if($getCursos->count()>0)
     <section id="work" class="portfolio-mf sect-pt4 route">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="title-box text-center">
               <h3 class="title-a">
-                CURSOS Y CAPACITACIONES
+             Obras en Cartelera 
               </h3>
-              <p class="subtitle-a">TALLERES PRESENCIALES               </p>
+              <p class="subtitle-a">Nicasio Multiespacio               </p>
               <div class="line-mf"></div>
             </div>
           </div>
         </div>
-        <div class="row">
-          @foreach($getPortfolio as $portfolio)
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="{{ asset('storage/uploads/image/portfolio/'.$portfolio->image) }}" data-gall="portfolioGallery" class="venobox">
-                <div class="work-img">
-                  <img src="{{ asset('storage/uploads/image/portfolio/'.$portfolio->image) }}" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h2 class="w-title">{{ $portfolio->title }}</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">{{ $portfolio->description }}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
+        
+          <div id="calendar"> </div>
+
+@php
+    $misEventos = $getCursos->map(function($obra) {
+        return [
+            "id"    => $obra->id,
+            "title" => $obra->titulo,
+            "start" => $obra->fecha . ($obra->horainicio ? "T{$obra->horainicio}" : ""),
+            "url"   => route('ver', $obra->id), 
+            "extendedProps" => [
+                // Asegúrate de que esta sea la ruta pública de tu imagen
+                "image_url" => asset('storage/uploads/image/obra/'.$obra->image) 
+
+                
+            ]
+        ];
+    });
+@endphp
+
+
+
+         
       </div>
     </section><!-- End Portfolio Section -->
     @endif
+
+    
    
-    <!-- ======= Contact Section ======= -->
-   
-
-    <section class="paralax-mf footer-paralax bg-image sect-mt4 route">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row justify-content-center">
-              <div class="col-lg-11">
-                  <div class="row justify-content-center">
-        
-                    <div class="col-lg-6 col-md-5 col-10 d-md-flex align-items-md-stretch">
-                      <div class="count-box py-3 w-100">
-                          <!-- El enlace envuelve el texto para que sea clickeable -->
-                          <h3 class="text-center bg-orange  p-2 rounded">
-                              <a href="/obras" class="text-decoration-none text-white">Recreación y esparcimiento</a>
-                          </h3>
-                      </div>
-                  </div>
-        
-                  <div class="col-lg-6 col-md-5 col-10 d-md-flex align-items-md-stretch">
-                    <div class="count-box py-3 w-100">
-                        <!-- El enlace envuelve el texto para que sea clickeable -->
-                        <h3 class="text-center bg-orange  p-2 rounded">
-                            <a href="/cursos" class="text-decoration-none text-white">Cursos y Capacitaciones</a>
-                        </h3>
-                    </div>
-                </div>
-                  </div>
-              </div>
-          </div>
-
-
-
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-
-
-
-                  
-                  <div class="col-md-6 mx-auto">
-                    <img src="{{ asset('templates/frontend/devfolio') }}/assets/img/viviendoNicasio.png" style="width: 80%">
-
-                  </div>
-                  
-                </div>
-
-
-                <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
-                  <a href="/fotos" class="btn btn-outline-primary btn-lg px-5 py-3">Ver Fotos</a>
-              </div>
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-orange w-100 py-4 mt-3 rounded text-center">
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer>
-    
     <div class="container">
-
       <div class="row">
-       
-          
-      </div>
         <div class="col-sm-12">
            <div class="redes">
                           <div class="accesoRedes row">
@@ -281,15 +190,17 @@
             </div>
           </div>
         </div>
-       
       </div>
     </div>
-
   </footer><!-- End  Footer -->
+
+
+
+
+ 
   <div style="width: 100%; background-color: #606060; display: flex; justify-content: center; align-items: center;">
-    <img src="assets/image/footer.png" style="height: 80px;">
+  <img src="assets/image/footer.png" style="height: 80px;">
 </div>
-       
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 
@@ -307,6 +218,77 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('templates/frontend/devfolio') }}/assets/js/main.js"></script>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/es.js'></script>
+
+
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            // 'Calendar' is now defined and accessible
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                // options here
+              //  plugins: [ dayGrid],
+              initialView: 'dayGridMonth',
+              locale: 'es', // Configuración clave
+              headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,listWeek'
+              },
+
+              // Inyección directa usando json_encode
+             
+               events: <?php echo json_encode($misEventos); ?>,
+
+              // Si quieres que TODOS los enlaces se abran en una pestaña nueva:
+                eventClick: function(info) {
+                    if (info.event.url) {
+                        info.jsEvent.preventDefault(); // Evita la navegación normal
+                        window.open(info.event.url, "_blank"); // Abre en pestaña nueva
+                    }
+                },
+               eventContent: function(arg) {
+                  let imageUrl = arg.event.extendedProps.image_url;
+                  
+                  // Creamos el contenedor del título y la imagen
+                  let container = document.createElement('div');
+                  container.style.display = 'flex';
+                  container.style.alignItems = 'center';
+                  container.style.gap = '5px';
+
+                  // Si existe imagen, creamos el elemento img
+                  if (imageUrl) {
+                      let img = document.createElement('img');
+                      img.src = imageUrl;
+                      img.style.width = '80px';  // Ajusta el tamaño
+                      img.style.height = '80px';
+                      img.style.borderRadius = '50%';
+                      container.appendChild(img);
+                  }
+
+                  let title = document.createElement('span');
+                  title.innerText = arg.event.title;
+                  container.appendChild(title);
+
+                  return { domNodes: [container] };
+              }
+
+              
+            });
+            calendar.render();
+        });
+
+
+       
+    </script>
 </body>
+
+    <!-- FullCalendar CSS -->
+   
+   
 
 </html>

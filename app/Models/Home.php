@@ -12,6 +12,40 @@ class Home extends Model
     use HasFactory;
 
 
+
+    public function getObraById($id)
+    {
+    	return DB::table('obras')->where('id',$id)->first();
+    }
+
+    public function getObras()
+    {
+    	return DB::table('obras')->where('activo',1)->get();
+    }
+      public function getHeaderObras()
+    {
+    	return DB::table('headers')->where('is_active',1)->where('seccion',7)->first();
+    }
+    public function getFooterObras()
+    {
+        return DB::table('footers')->where('is_active',1)->where('seccion',7)->first();
+    }
+
+
+    public function getFotos()
+    {
+    	return DB::table('fotos')->where('activo',1)->get();
+    }
+      public function getHeaderFotos()
+    {
+    	return DB::table('headers')->where('is_active',1)->where('seccion',6)->first();
+    }
+    public function getFooterFotos()
+    {
+        return DB::table('footers')->where('is_active',1)->where('seccion',6)->first();
+    }
+
+
     public function getDetalleMision()
     {
     	return DB::table('pages')->where('id',4)->first();

@@ -54,6 +54,12 @@ Route::namespace('Home')->group(function(){
 	Route::get('/',[HomeController::class,'index']);
 	Route::get('/',[HomeController::class,'index'])->name('home');
 	Route::get('/novedades',[HomeController::class,'novedades'])->name('novedades');
+	Route::get('/fotos',[HomeController::class,'fotos'])->name('fotos');
+	Route::get('/obras',[HomeController::class,'obras'])->name('obras');
+
+	Route::get('obra/{id}',[HomeController::class,'ver'])->name('ver');
+
+
 
 	Route::get('/cursos',[HomeController::class,'cursos'])->name('cursos');
 	Route::get('/institucional',[HomeController::class,'institucional'])->name('institucional');
@@ -140,7 +146,8 @@ Route::middleware(['auth'])->namespace('Admin')->group(function(){
 	Route::resource('/admin/skill','SkillController');
 	Route::resource('/admin/curso','CursoController');
 	Route::resource('/admin/page','PageController');
-	
+	Route::resource('/admin/foto','FotoController');
+
 	Route::resource('/admin/obra','ObraController');
 	Route::resource('/admin/novedad','NovedadController');
 	

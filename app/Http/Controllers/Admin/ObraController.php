@@ -13,6 +13,13 @@ use PhpParser\Node\Stmt\Echo_;
 
 class ObraController extends Controller
 {
+
+    public function ver(Obra $obra)
+    {
+        return view('home.obra',['obra' => $obra]);
+    }
+
+
     public function index()
     {
         $obras = Obra::get();

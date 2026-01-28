@@ -99,6 +99,15 @@
             <i class="fa fa-sitemap"></i>
             <span>Obras</span></a>
     </li>
+
+
+
+    <li class="nav-item {{ Request::is('foto') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('foto.index') }}">
+            <i class="far fa-image"></i>
+            <span>Fotos</span></a>
+    </li>
+
 <li class="nav-item {{ Request::is('user') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('user.index') }}">
         <i class="fa fa-user"></i>

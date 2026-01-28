@@ -31,9 +31,13 @@
 <body id="page-top">
 
   <!-- ======= Header/ Navbar ======= -->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav" style="background: #f9e7db;box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);">
+    
+    
+    
     <div class="container">
       <a class="navbar-brand js-scroll" href="#page-top">
+        
           <img src="{{ asset('templates/frontend/devfolio') }}/assets/img/logo.png" style="height: 55px; object-fit: cover; object-position: center;" class="img-fluid rounded b-shadow-a" alt="">
 
      </a>
@@ -53,6 +57,22 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contacto</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="cursos">Cursos</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll" href="institucional">Institucional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="mision">Mision</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="novedades">Novedades</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll" href="objetivos">Objetivos</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -66,9 +86,7 @@
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4">{{ $getHeader->up_text ?? 'Nicasio' }}</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">{{ $getHeader->down_text ?? 'Multiespacio' }}</span><strong class="text-slider"></strong></p>
-           <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">+Info..</a></p> 
-        </div>
+          </div>
       </div>
     </div>
   </div><!-- End Intro Section -->
@@ -96,9 +114,9 @@
           @foreach($getCursos as $curso)
           <div class="col-md-4">
             <div class="work-box">
-              <a href="{{ asset('storage/uploads/image/cursos/'.$curso->image) }}" data-gall="portfolioGallery" class="venobox">
+              <a href="{{ asset('storage/uploads/image/curso/'.$curso->image) }}" data-gall="portfolioGallery" class="venobox">
                 <div class="work-img">
-                  <img src="{{ asset('storage/uploads/image/cursos/'.$curso->image) }}" alt="" class="img-fluid">
+                  <img src="{{ asset('storage/uploads/image/curso/'.$curso->image) }}" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
@@ -129,27 +147,9 @@
               <div id="contact" class="box-shadow-full">
                 <div class="row">
                   <div class="col-md-6 mx-auto">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        {{ $getFooter->title ?? 'Footer Title'  }}
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                       {{ $getFooter->description ?? 'Footer desription here' }}
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="ion-ios-location"></span> {{ $getFooter->address ?? 'Direccion'  }}</li>
-                        <li><span class="ion-ios-telephone"></span> {{ $getFooter->phone ?? 'Telefono'  }}</li>
-                        <li><span class="ion-email"></span> {{ $getFooter->email ?? ' Email'  }}</li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href="javascript:void(0)" onclick="window.open('https://web.facebook.com/profile.php?id=100050205264012')"><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                      </ul>
-                    </div>
-                      
+                    
+                    <img src="{{ asset('templates/frontend/devfolio') }}/assets/img/viviendoNicasio.png" style="width: 80%">
+
                   </div>
                 </div>
               </div>
@@ -187,7 +187,9 @@
       </div>
     </div>
   </footer><!-- End  Footer -->
-
+  <div style="width: 100%; background-color: #606060; display: flex; justify-content: center; align-items: center;">
+  <img src="assets/image/footer.png" style="height: 80px;">
+</div>
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 

@@ -16,6 +16,23 @@ class HomeController extends Controller
 		$this->home = new Home;
 	}
 
+
+
+	public function ver( $id)
+    {
+		$obra = $this->home->getObraById($id);
+
+        return view('home.obra',[
+			'obra' => $obra,
+			'getHeader' => $this->home->getHeaderObras(),
+    		
+    		'getFooter' => $this->home->getFooterObras(),
+		
+		]);
+    }
+
+
+
     public function index()
     {
     	return view('home.index',[
@@ -24,6 +41,29 @@ class HomeController extends Controller
     		'getFooter' => $this->home->getFooter(),
     		'getSkill' 	=> $this->home->getSkill(),
     		'getPortfolio' 	=> $this->home->getPortfolio(), 
+    	]);
+    }
+
+
+
+
+	public function obras()
+    {
+    	return view('home.obras',[
+    		'getHeader' => $this->home->getHeaderObras(),
+    		
+    		'getFooter' => $this->home->getFooterObras(),
+    		'getCursos'  	=> $this->home->getObras(),
+    	]);
+    }
+
+	public function fotos()
+    {
+    	return view('home.fotos',[
+    		'getHeader' => $this->home->getHeaderFotos(),
+    		
+    		'getFooter' => $this->home->getFooterFotos(),
+    		'getCursos'  	=> $this->home->getFotos(),
     	]);
     }
 
