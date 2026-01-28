@@ -12,6 +12,12 @@ class Home extends Model
     use HasFactory;
 
 
+    public function getDetalleMision()
+    {
+    	return DB::table('pages')->where('id',4)->first();
+    }
+
+
 
     public function getAboutObjetivos()
     {

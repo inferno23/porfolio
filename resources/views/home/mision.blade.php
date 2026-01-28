@@ -20,6 +20,8 @@
   <link href="{{ asset('templates/frontend/devfolio') }}/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="{{ asset('templates/frontend/devfolio') }}/assets/vendor/venobox/venobox.css" rel="stylesheet">
 
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
   <!-- Template Main CSS File -->
   <link href="{{ asset('templates/frontend/devfolio') }}/assets/css/style.css" rel="stylesheet">
 
@@ -84,36 +86,18 @@
           <div class="col-sm-12">
             <div class="box-shadow-full">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="{{ asset('storage/uploads/image/about/'.$getAbout->image ?? 'gambar' ) }}" style="height: 200px; object-fit: cover; object-position: center;" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Nombre: </span> <span>{{ $getAbout->name ?? 'Rahmat Hidayatullah' }}</span></p>
-                        <p><span class="title-s">Profile: </span> <span>{{ $getAbout->role ?? 'Student' }}</span></p>
-                        <p><span class="title-s">Email: </span> <span>{{ $getAbout->email ?? 'ratuaddil432@gmail.com' }}</span></p>
-                        <p><span class="title-s">Telefono: </span> <span>{{ $getAbout->phone ?? '0859987263' }}</span></p>
-                      </div>
-                    </div>
-                  </div>
-                 
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
+                
+               
                     <div class="title-box-2">
                       <h5 class="title-left">
-                        {{ $getAbout->title ?? 'Multiespacio' }}
+                        {{ $getDetalle->title ?? 'Multiespacio' }}
                       </h5>
                     </div>
-                    <p class="lead">
-                      {{ $getAbout->description ?? ' ok' }}
-                    </p>
+                    <div class="quill-view-content">
+                      <!-- This is the key part: unescaped output -->
+                      {!! $getDetalle->description !!}
                   </div>
-                </div>
+                  
               </div>
             </div>
           </div>

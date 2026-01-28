@@ -15,7 +15,7 @@
 </div>
     <div class="row mt-4">
 
-        <img src="{{ asset('storage/uploads/image/page/'.$page->image) }}" width="950" height="550">
+        <img src="{{ asset('storage/uploads/image/page/'.$page->image) }}" width="950" height="550"  style="display: block; margin-left: auto; margin-right: auto;">
 
        
        

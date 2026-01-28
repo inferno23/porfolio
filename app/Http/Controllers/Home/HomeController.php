@@ -72,9 +72,11 @@ class HomeController extends Controller
     }
 	public function mision()
     {
+		
     	return view('home.mision',[
     		'getHeader' => $this->home->getHeaderMision(),
     		'getAbout' 	=> $this->home->getAboutMision(),
+			'getDetalle' 	=> $this->home->getDetalleMision(),
     		'getFooter' => $this->home->getFooterMision(),
     		
     	]);

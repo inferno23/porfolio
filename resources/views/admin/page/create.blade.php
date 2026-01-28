@@ -88,7 +88,14 @@
                        <option value="ubuntu">Ubuntu</option>
                     </select>
               
-                  <select class="ql-size"></select>
+                  <select class="ql-size">
+                    <option value="small">Pequeño</option>
+                    <option selected  value="normal">Normal</option>
+                    <option value="large">Grande</option>
+                    <option value="huge">Enorme</option>
+
+
+                  </select>
                 </span>
                 <span class="ql-formats">
                   <button class="ql-bold"></button>
@@ -122,8 +129,8 @@
                 </span>
                 <span class="ql-formats">
                   <button class="ql-link"></button>
-                  <button class="ql-image"></button>
-                  <button class="ql-video"></button>
+                  <!-- button class="ql-image"></button-->
+                  <!--button class="ql-video"></button-->
                   <button class="ql-formula"></button>
                 </span>
                 <span class="ql-formats">
@@ -133,7 +140,7 @@
               
               
               <div id="editor" name="editor">
-                  <p>Escribe aquí tu contenido...</p>
+                 
               </div>
 
               <p></p>
@@ -178,6 +185,41 @@ const quill = new Quill('#editor', {
 #editor {
             height: 400px; /* Ajusta la altura del editor */
         }
+
+        .ql-snow .ql-picker.ql-header {
+  width: 230px;
+}
+
+/* Quitar el icono original por si acaso sigue ahí */
+.ql-header svg {
+  display: none !important;
+}
+
+/* Insertar la leyenda "Título" para H1 */
+.ql-header[value="1"]::after {
+  content: 'Título';
+  font-size: 14px;
+}
+
+/* Insertar la leyenda "Subtítulo" para H2 */
+.ql-header[value="2"]::after {
+  content: 'Subtítulo';
+  font-size: 14px;
+}
+
+/* Ajustar el diseño de los botones para que quepa el texto */
+.ql-snow.ql-toolbar button.ql-header {
+  width: auto !important; /* Permite que el botón se estire */
+  padding: 0 8px;         /* Espacio a los lados del texto */
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Estilo visual cuando el botón está activo */
+.ql-snow.ql-toolbar button.ql-header.ql-active {
+  color: #06c; /* Color azul característico de Quill activo */
+}
 /* Set dropdown font-families */
  #toolbar-container .ql-font span[data-label="Arial"]::before {
   font-family: "Arial";
