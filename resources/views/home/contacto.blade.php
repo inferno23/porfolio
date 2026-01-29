@@ -22,38 +22,88 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('templates/frontend/devfolio') }}/assets/css/style.css" rel="stylesheet">
-
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <!-- =======================================================
   
   ======================================================== -->
 </head>
 <style>
-:root {
-  /* Colores de eventos */
-  --fc-event-bg-color: #FFCC99; /* Naranja principal */
-  --fc-event-border-color: #CC5200; /* Naranja oscuro para bordes */
-  --fc-event-text-color: #fff; /* Texto blanco */
   
-  /* Botones y cabecera */
-  --fc-button-bg-color: #f8bd96; /* Naranja claro */
-  --fc-button-border-color: #FF6600;
-  --fc-button-hover-bg-color: #CC5200;
-  --fc-button-hover-border-color: #993D00;
-  --fc-button-active-bg-color: #f7924f;
-  
-  /* Bordes de la tabla */
-  --fc-border-color: #FFCC99; 
-}
 
-/* Opcional: Cambiar color de fondo de los eventos en el calendario */
-.fc-event {
-    background-color: var(--fc-event-bg-color);
-    border-color: var(--fc-event-border-color);
-}
+  .sede {
+    
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
+  .sede:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  }
 
+  .orange {
+      color: #f97316;
+  }
 
+  .titulo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+  }
+
+  .divider {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #f97316, transparent);
+      margin: 20px auto;
+      width: 60%;
+      border-radius: 2px;
+  }
+
+  .info-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 0;
+      font-size: 1rem;
+      color: #374151;
+  }
+
+  .info-item i {
+      font-size: 1.2rem;
+      width: 24px;
+  }
+
+  .info-item span {
+      text-align: left;
+  }
+
+  .mail span {
+      word-break: break-all;
+  }
+
+  @media (max-width: 480px) {
+      .sede {
+          padding: 30px 20px;
+      }
+
+      .titulo {
+          font-size: 1.25rem;
+      }
+
+      .info-item {
+          font-size: 0.9rem;
+      }
+  }
 </style>
+
 <body id="page-top">
 
   <!-- ======= Header/ Navbar ======= -->
@@ -113,13 +163,45 @@
     
   </div><!-- End Intro Section -->
   <div class="bg-orange w-100 rounded text-center" style="padding-top: 3rem; padding-bottom: 3rem; margin-top: 1rem;">
+    <div class="container">
+      <div class="sede">
+          <div class="titulo orange">MULTIESPACIO NICASIO</div>
+          
+          <div class="divider"></div>
+          
+          <div class="info-item direccion orange">
+            <i class="ion-location orange" style='font-size:36px;'></i>
+
+              <span>San Lorenzo 1055   -</span>
+          
+            <i class='ion-android-call orange' style='font-size:36px;'></i>
+              <span>5587023    -</span>
+
+         
+
+              <i class='ion-email orange' style='font-size:36px;'></i>
+
+              <span>multiespacio@impsr.gob.ar</span>
+          </div>
+          <div class="divider"></div>
+      </div>
   </div>
+  
+  </div>
+
+
+  
+
+
   <main id="main">
+    
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="container py-5">
             <div class="row justify-content-center">
+
+              
                 <div class="col-md-6 col-lg-5">
                     <div class="card shadow border-0 overflow-hidden" style="border-radius: 1rem;">
                         <!-- Encabezado con color personalizado naranja -->
