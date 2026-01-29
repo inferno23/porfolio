@@ -113,7 +113,15 @@
         <i class="fa fa-user"></i>
             <span>Usuarios</span></a>
     </li>
-    
+
+
+    <li class="nav-item">
+
+    <a class="nav-link btn-danger" href="{{ url('/admin/logout') }}" >
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white-400"></i>
+        <span> Cerrar Sesión</span>
+    </a>
+</li>
     @endif
     
 

@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function authenticate(Request $request)
     {
-    	$credentials = $request->only(['email','password']);
+    	$credentials = $request->only(['username','password']);
 
     	if (Auth::attempt($credentials)) {
   			return redirect()->intended('admin');
@@ -20,6 +20,11 @@ class LoginController extends Controller
     	}
     }
 
+
+	public function username()
+		{
+			return 'username';
+		}
 
 	public function logout(Request $request) {
 		//debug($request);

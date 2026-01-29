@@ -24,8 +24,10 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     
-    <link rel="shortcut icon" href="{{ asset('templates/backend/sb-admin-2') }}/img/favicon.ico">
-    
+      <!-- Favicons -->
+  <link href="{{ asset('templates/frontend/devfolio') }}/assets/img/favicon.jpeg" rel="icon">
+  <link href="{{ asset('templates/frontend/devfolio') }}/assets/img/favicon.jpeg" rel="apple-touch-icon">
+
 
 </head>
 
@@ -59,10 +61,10 @@
                                 
                                     <form class="margin-t" method="POST" action="{{ route('login.post') }}">
                                         <div class="form-group">
-                                            <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                                id="exampleInputEmail" name="email" aria-describedby="emailHelp"
-                                                placeholder="Email">
-                                            @error('email')
+                                            <input type="" class="form-control @error('username') is-invalid @enderror"
+                                                id="exampleInputEmail" name="username" aria-describedby="emailHelp"
+                                                placeholder="usuario">
+                                            @error('username')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -97,7 +99,7 @@
     </div>
     
     <div class="footer">
-         <a href="#" alt="Caja de Jubilaciones de Córdoba | Ministerio de Finanzas de la Provincia de Córdoba" target="_blank">
+         <a href="#" alt="Multiespacio NICASIO" target="_blank">
 	    	<img src="assets/image/footer.png" style="height: 80px;"> 
 
          

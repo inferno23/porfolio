@@ -12,6 +12,8 @@
 
     <title>{{ $title ?? 'Multiespacio' }}</title>
     
+    <!-- Favicons -->
+  
     <link rel="shortcut icon" href="{{ asset('templates/backend/sb-admin-2') }}/img/favicon.jpeg">
 
     <!-- Custom fonts for this template-->
