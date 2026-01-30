@@ -78,11 +78,9 @@
             <a class="nav-link js-scroll active" href="{{ route('home') }}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">Acerca</a>
+            <a class="nav-link js-scroll" href="novedades">Novedades</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contacto</a>
-          </li>
+          
 
           <li class="nav-item">
             <a class="nav-link js-scroll" href="cursos">Cursos</a>
@@ -93,18 +91,19 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="mision">Mision</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="novedades">Novedades</a>
-          </li>
+          
            <li class="nav-item">
             <a class="nav-link js-scroll" href="objetivos">Objetivos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="contacto">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ======= Intro Section ======= -->
+  <!-- ======= Intro Section 
   <div id="home" class="intro route bg-image" style="background-image: url({{ asset('storage/uploads/image/header/'.$getHeader->image ?? 'gambar' ) }}">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
@@ -127,12 +126,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
+            <div class="title-box text-center " >
+              <h3 class="title-a" style="color:#f97316">
              Obras en Cartelera 
               </h3>
-              <p class="subtitle-a">Nicasio Multiespacio               </p>
-              <div class="line-mf"></div>
+              <p class="subtitle-a" style="color:#f97316">Nicasio Multiespacio               </p>
+              <div class="divider"></div>
             </div>
           </div>
         </div>
@@ -259,6 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   container.style.display = 'flex';
                   container.style.alignItems = 'center';
                   container.style.gap = '5px';
+                  container.style.flexDirection = 'column';
 
                   // Si existe imagen, creamos el elemento img
                   if (imageUrl) {

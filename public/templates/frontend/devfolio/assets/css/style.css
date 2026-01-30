@@ -103,6 +103,16 @@ a:hover {
   border: none;
 }
 
+
+
+.divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f97316, transparent);
+  margin: 20px auto;
+  width: 60%;
+  border-radius: 2px;
+}
+
 @media (max-width: 1024px) {
   .bg-image {
     background-attachment: scroll;

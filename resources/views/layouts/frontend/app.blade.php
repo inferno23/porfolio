@@ -55,7 +55,7 @@
           </li>
          
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contacto</a>
+            <a class="nav-link js-scroll" href="{{ route('contact.show') }}">Contacto</a>
           </li>
 
           <li class="nav-item">
@@ -203,7 +203,7 @@
                       <div class="count-box py-3 w-100">
                           <!-- El enlace envuelve el texto para que sea clickeable -->
                           <h3 class="text-center bg-orange  p-2 rounded">
-                              <a href="/obras" class="text-decoration-none text-white">Recreación y esparcimiento</a>
+                              <a href="obras" class="text-decoration-none text-white">Recreación y esparcimiento</a>
                           </h3>
                       </div>
                   </div>
@@ -212,7 +212,7 @@
                     <div class="count-box py-3 w-100">
                         <!-- El enlace envuelve el texto para que sea clickeable -->
                         <h3 class="text-center bg-orange  p-2 rounded">
-                            <a href="/cursos" class="text-decoration-none text-white">Cursos y Capacitaciones</a>
+                            <a href="cursos" class="text-decoration-none text-white">Cursos y Capacitaciones</a>
                         </h3>
                     </div>
                 </div>
